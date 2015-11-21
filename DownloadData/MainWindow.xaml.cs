@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -23,6 +24,15 @@ namespace DownloadData
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+     
+
+        private void TextBoxSaveToLocation_OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var dialog = new FolderBrowserDialog();
+            dialog.ShowDialog();
+            TextBoxSaveToLocation.Text = dialog.SelectedPath;
         }
     }
 }

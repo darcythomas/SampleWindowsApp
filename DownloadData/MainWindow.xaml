@@ -12,7 +12,7 @@
         <Button x:Name="ButtonDownLoad" Content="Download" HorizontalAlignment="Left" Margin="126,244,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.107,0.55"/>
         <Label x:Name="LabelStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="47,74,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="51,124,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxSaveToLocation" HorizontalAlignment="Left" Height="23" Margin="126,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235" />
+        <TextBox x:Name="TextBoxSaveToLocation" HorizontalAlignment="Left" Height="23" Margin="126,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"  PreviewMouseUp="TextBoxSaveToLocation_OnPreviewMouseUp"/>
         <Label x:Name="LabelSaveTo" Content="Save To:" HorizontalAlignment="Left" Margin="59,175,0,0" VerticalAlignment="Top"/>
 
     </Grid>
