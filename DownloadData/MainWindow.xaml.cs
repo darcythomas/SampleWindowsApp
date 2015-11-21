@@ -34,5 +34,13 @@ namespace DownloadData
             dialog.ShowDialog();
             TextBoxSaveToLocation.Text = dialog.SelectedPath;
         }
+        
+
+      
+
+        private void ButtonDownLoad_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

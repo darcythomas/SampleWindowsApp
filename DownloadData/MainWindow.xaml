@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DownloadData"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Sample Download Tool" Height="350" Width="525">
     <Grid>
-        <DatePicker HorizontalAlignment="Left" Margin="126,76,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="126,125,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ButtonDownLoad" Content="Download" HorizontalAlignment="Left" Margin="126,244,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.107,0.55"/>
+        <DatePicker HorizontalAlignment="Left" Margin="126,76,0,0" VerticalAlignment="Top" ToolTip="Select a Start Date" Name="DatePickerStartDate"/>
+        <DatePicker HorizontalAlignment="Left" Margin="126,125,0,0" VerticalAlignment="Top" ToolTip="Select an End Date" Name="DatePickerEndDate" />
+        <Button x:Name="ButtonDownLoad" Content="Download" HorizontalAlignment="Left" Margin="126,229,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.107,0.55" ToolTip="Click to Download."  Click="ButtonDownLoad_OnClick"/>
         <Label x:Name="LabelStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="47,74,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="51,124,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxSaveToLocation" HorizontalAlignment="Left" Height="23" Margin="126,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"  PreviewMouseUp="TextBoxSaveToLocation_OnPreviewMouseUp"/>
-        <Label x:Name="LabelSaveTo" Content="Save To:" HorizontalAlignment="Left" Margin="59,175,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxSaveToLocation" HorizontalAlignment="Left" Height="23" Margin="126,173,0,0" TextWrapping="Wrap" Text="" ToolTip="Folder location to save to."  VerticalAlignment="Top" Width="235"  PreviewMouseUp="TextBoxSaveToLocation_OnPreviewMouseUp"/>
+        <Label x:Name="LabelSaveTo" Content="Save To:" HorizontalAlignment="Left" Margin="59,169,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxEndPoint" HorizontalAlignment="Left" Height="23" Margin="126,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  ToolTip="Enter a url to download from." />
+        <Label x:Name="LabelEndpoint" Content="Endpoint:" HorizontalAlignment="Left" Margin="52,28,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
