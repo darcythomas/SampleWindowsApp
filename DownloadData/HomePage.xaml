@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="DownloadData.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DownloadData"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="525">
+    <Grid>
+        <DatePicker HorizontalAlignment="Left" Margin="126,76,0,0" VerticalAlignment="Top" ToolTip="Select a Start Date" x:Name="DatePickerStartDate"/>
+        <DatePicker HorizontalAlignment="Left" Margin="126,125,0,0" VerticalAlignment="Top" ToolTip="Select an End Date" x:Name="DatePickerEndDate" />
+        <Button x:Name="ButtonDownLoad" Content="Download" HorizontalAlignment="Left" Margin="126,229,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.107,0.55" ToolTip="Click to Download."  Click="ButtonDownLoad_OnClick"/>
+        <Label x:Name="LabelStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="47,74,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="51,124,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxSaveToLocation" HorizontalAlignment="Left" Height="23" Margin="126,173,0,0" TextWrapping="Wrap" Text="" ToolTip="Folder location to save to."  VerticalAlignment="Top" Width="235"  PreviewMouseUp="TextBoxSaveToLocation_OnPreviewMouseUp"/>
+        <Label x:Name="LabelSaveTo" Content="Save To:" HorizontalAlignment="Left" Margin="59,169,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxEndPoint" HorizontalAlignment="Left" Height="23" Margin="126,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  ToolTip="Enter a url to download from." />
+        <Label x:Name="LabelEndpoint" Content="Endpoint:" HorizontalAlignment="Left" Margin="52,28,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</UserControl>
