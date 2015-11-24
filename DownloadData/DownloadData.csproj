@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,14 +57,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CompletedDownload.xaml.cs">
+      <DependentUpon>CompletedDownload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadFromEndpointProvider.cs" />
     <Compile Include="DownloadingUserControl.xaml.cs">
       <DependentUpon>DownloadingUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadParameters.cs" />
+    <Compile Include="ErrorDownloading.xaml.cs">
+      <DependentUpon>ErrorDownloading.xaml</DependentUpon>
     </Compile>
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
+    <Page Include="CompletedDownload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DownloadingUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ErrorDownloading.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,18 +21,64 @@ namespace DownloadData
     /// </summary>
     public partial class DownloadingUserControl : UserControl
     {
-        public DownloadingUserControl()
+        private readonly DownloadParameters _downloadParameters;
+        private readonly DownloadFromEndpointProvider _downloader;
+        readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+
+
+        //public DownloadingUserControl()
+        //{
+        //    _downloader = new DownloadFromEndpointProvider(Dispatcher);
+
+        //    InitializeComponent();
+
+        //    _downloadParameters = (DownloadParameters)DataContext;
+        //    StartDownload();
+        //}
+
+        public DownloadingUserControl(DownloadParameters downloadParameters)
         {
+            _downloader = new DownloadFromEndpointProvider(this.Dispatcher);
+            _downloadParameters = downloadParameters;
+
             InitializeComponent();
+            StartDownload(downloadParameters);
         }
 
-        public DownloadingUserControl(String labelContent)
+        private void StartDownload(DownloadParameters downloadParameters)
         {
-            InitializeComponent();
-            labelx.Content = labelContent;
-            
+            Task.Run(() => _downloader.DownloadAndSave(_downloadParameters, _cancellationTokenSource.Token, Progress, DownloadFailed));
         }
 
-       
+
+
+
+
+        private void ButtonCancel_OnClick(object sender, RoutedEventArgs e)
+        {
+            _cancellationTokenSource.Cancel();
+            this.SwitchTo(new HomePage());
+        }
+
+        public void Progress(int percentDone, bool completed)
+        {
+            ProgressBarDownload.IsIndeterminate = false;
+            if (completed)
+            {
+                ProgressBarDownload.Value = 100;
+                Done();
+            }
+
+            ProgressBarDownload.Value = percentDone;
+        }
+
+        public void Done()
+        {
+            this.SwitchTo(new CompletedDownload());
+        }
+        public void DownloadFailed()
+        {
+            this.SwitchTo(new ErrorDownloading());
+        }
     }
 }

@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DownloadData"
         mc:Ignorable="d"
-        Title="Sample Download Tool" Height="350" Width="525">
+        Title="Sample Download Tool" Height="320" Width="480">
     <Grid/>
 </Window>

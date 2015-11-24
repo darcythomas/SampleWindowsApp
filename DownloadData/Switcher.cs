@@ -10,7 +10,7 @@ namespace DownloadData
 {
     public static class Switcher
     {
-        public static void Switch(this UserControl currentPage, UserControl nextPage)
+        public static void SwitchTo(this UserControl currentPage, UserControl nextPage)
         {
             Window parentWindow = Window.GetWindow(currentPage);
             parentWindow.Content = nextPage;

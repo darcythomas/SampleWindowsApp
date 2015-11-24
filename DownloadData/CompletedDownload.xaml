@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="DownloadData.CompletedDownload"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DownloadData"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="480">
+    <Grid>
+        <Label x:Name="LabelDownloaded" Content="File Downloaded:" HorizontalAlignment="Left" Margin="19,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelLinkToFile" Content="{Binding Path=FileName.Name}" Foreground="CornflowerBlue" HorizontalAlignment="Left" Margin="124,80,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.255,-0.211" MouseLeftButtonUp="LabelLinkToFile_OnMouseLeftButtonUp"/>
+
+        <Button x:Name="buttonDone" Content="Done" HorizontalAlignment="Left" Margin="320,230,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.486,-0.254" Click="ButtonDone_OnClick"/>
+
+    </Grid>
+</UserControl>

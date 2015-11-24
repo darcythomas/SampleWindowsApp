@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace DownloadData
@@ -21,25 +23,26 @@ namespace DownloadData
     /// </summary>
     public partial class HomePage : UserControl
     {
+
         public HomePage()
         {
             InitializeComponent();
         }
 
-
         private void TextBoxSaveToLocation_OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            var dialog = new FolderBrowserDialog();
+            DownloadParameters parameters = (DownloadParameters)DataContext;
+
+            var dialog = new FolderBrowserDialog {SelectedPath = parameters.SaveLocation};
             dialog.ShowDialog();
-            TextBoxSaveToLocation.Text = dialog.SelectedPath;
+
+            parameters.SaveLocation = dialog.SelectedPath;
         }
-
-
 
 
         private void ButtonDownLoad_OnClick(object sender, RoutedEventArgs e)
         {
-            this.Switch(new DownloadingUserControl("hi"));
+            this.SwitchTo(new DownloadingUserControl((DownloadParameters)DataContext));
         }
     }
 }

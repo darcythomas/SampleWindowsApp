@@ -25,13 +25,25 @@ namespace DownloadData
         {
             InitializeComponent();
 
+
+            var datacontext = new DownloadParameters
+            {
+                SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                EndPoint = "http://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?inc=aliases&fmt=json",
+                StartDate = DateTime.Today.AddDays(-1),
+                EndDate = DateTime.Today
+            };
+
+
+
+
+            DataContext = datacontext;
+
+
             HomePage initalPage = new HomePage();
             this.Content = initalPage;
         }
 
-        internal void Navigate(System.Windows.Controls.UserControl nextPage)
-        {
-            this.Content = nextPage;
-        }
+     
     }
 }

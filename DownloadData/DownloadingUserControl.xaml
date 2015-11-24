@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DownloadData"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="320" d:DesignWidth="480">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="94,111,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="labelx" Content="Label" HorizontalAlignment="Left" Margin="94,214,0,0" VerticalAlignment="Top" />
+        <Button x:Name="ButtonCancel" Content="Cancel" Margin="324,230,81,0"  VerticalAlignment="Top" RenderTransformOrigin="0.81,5.342" Click="ButtonCancel_OnClick"/>
+        <ProgressBar Name="ProgressBarDownload" IsIndeterminate="True"  Minimum="0" Maximum="100" Value="0" HorizontalAlignment="Left" Height="18" Margin="140,86,0,0" VerticalAlignment="Top" Width="232"/>
+        <Label x:Name="LabelProgress" Content="Downloading" HorizontalAlignment="Left" Margin="40,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.494,-1.808" />
 
     </Grid>
 </UserControl>
